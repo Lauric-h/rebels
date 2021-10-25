@@ -4,10 +4,9 @@ import com.springmsa.rebels.dao.RebelsDao;
 import com.springmsa.rebels.model.Rebels;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.persistence.Entity;
 
 
 @RestController
@@ -23,4 +22,9 @@ public class RebelsController {
         return dao.findById(id);
     }
 
+    @Operation(summary = "POST rebel")
+    @PostMapping()
+    public void addRebels(@RequestBody Rebels rebels){
+         dao.save(rebels);
+    }
 }
