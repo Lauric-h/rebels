@@ -1,5 +1,7 @@
 package com.springmsa.rebels.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,8 +14,10 @@ public class Rebels {
         private int id;
         private String lastName;
         private String firstName;
+        @JsonFormat(pattern="yyyy-MM-dd")
         private Date birthDate;
         private int licenseNumber;
+        @JsonFormat(pattern="yyyy-MM-dd")
         private Date licenseDate;
 
         public Rebels (int id, String lastName, String firstName, Date birthDate, int licenseNumber, Date licenseDate){
