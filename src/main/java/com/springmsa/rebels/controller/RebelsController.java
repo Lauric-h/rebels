@@ -6,8 +6,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Entity;
-
 
 @RestController
 @RequestMapping("/api/rebels")
@@ -24,7 +22,8 @@ public class RebelsController {
 
     @Operation(summary = "POST rebel")
     @PostMapping()
-    public void addRebels(@RequestBody Rebels rebels){
-         dao.save(rebels);
+    public Rebels addRebels(@RequestBody Rebels rebels){
+       return dao.save(rebels);
+
     }
 }
