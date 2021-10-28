@@ -15,6 +15,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: Campus06
     networks:
       - rebels-net
+      - death-star-net
 
   rebels_database:
     image: mysql:5.7
@@ -35,3 +36,5 @@ volumes:
   dbstorage:
 networks:
   rebels-net:
+  death-star-net:
+    external: true
