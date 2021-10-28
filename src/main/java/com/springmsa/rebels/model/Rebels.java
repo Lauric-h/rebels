@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Rebels {
@@ -15,12 +15,12 @@ public class Rebels {
         private String lastName;
         private String firstName;
         @JsonFormat(pattern="yyyy-MM-dd")
-        private Date birthDate;
+        private LocalDate birthDate;
         private int licenseNumber;
         @JsonFormat(pattern="yyyy-MM-dd")
-        private Date licenseDate;
+        private LocalDate licenseDate;
 
-        public Rebels (int id, String lastName, String firstName, Date birthDate, int licenseNumber, Date licenseDate){
+        public Rebels (int id, String lastName, String firstName, LocalDate birthDate, int licenseNumber, LocalDate licenseDate){
 
             this.id = id;
             this.lastName = lastName;
@@ -59,11 +59,11 @@ public class Rebels {
         this.firstName = firstName;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -75,11 +75,11 @@ public class Rebels {
         this.licenseNumber = licenseNumber;
     }
 
-    public Date getLicenseDate() {
+    public LocalDate getLicenseDate() {
         return licenseDate;
     }
 
-    public void setLicenseDate(Date licenseDate) {
+    public void setLicenseDate(LocalDate licenseDate) {
         this.licenseDate = licenseDate;
     }
 }
